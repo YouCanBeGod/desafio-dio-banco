@@ -1,5 +1,15 @@
 public abstract class Conta implements IConta{
 
+    private static final int AGENCIA_PADRAO = 0001;
+    private static int SEQUENCIAL = 1;
+    protected int agencia;
+    protected int numero;
+    protected double saldo;
+
+    public Conta() {
+        agencia = AGENCIA_PADRAO;
+        numero = SEQUENCIAL++;
+    }
     @Override
     public void sacar(double valor) {
 
@@ -14,16 +24,13 @@ public abstract class Conta implements IConta{
     public void transferir(double valor, Conta contaDestino) {
 
     }
-    private int agencia;
-    private int conta;
-    private double saldo;
 
     public int getAgencia() {
         return agencia;
     }
 
-    public int getConta() {
-        return conta;
+    public int getNumero() {
+        return numero;
     }
 
     public double getSaldo() {
