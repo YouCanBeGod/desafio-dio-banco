@@ -5,10 +5,12 @@ public abstract class Conta implements IConta{
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
         agencia = AGENCIA_PADRAO;
         numero = SEQUENCIAL++;
+        this.cliente = cliente;
     }
     @Override
     public void sacar(double valor) {
@@ -39,6 +41,7 @@ public abstract class Conta implements IConta{
     }
 
     protected void imprimirDados() {
+        System.out.println(String.format("Titular: %s", cliente.getNome()));
         System.out.println(String.format("Agencia: %d", agencia));
         System.out.println(String.format("Numero: %d", numero));
         System.out.println(String.format("Saldo: %.2f", saldo));
