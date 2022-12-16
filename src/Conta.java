@@ -1,3 +1,8 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Conta implements IConta{
 
     private static final int AGENCIA_PADRAO = 0001;
@@ -28,17 +33,6 @@ public abstract class Conta implements IConta{
         contaDestino.depositar(valor);
     }
 
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
 
     protected void imprimirDados() {
         System.out.println(String.format("Titular: %s", cliente.getNome()));
