@@ -33,6 +33,12 @@ public abstract class Conta implements IConta{
         contaDestino.depositar(valor);
     }
 
+    @Override
+    public void pix(double valor, Conta contaDestino) {
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
+
 
     protected void imprimirDados() {
         System.out.println(String.format("Titular: %s", cliente.getNome()));

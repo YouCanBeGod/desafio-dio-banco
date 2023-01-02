@@ -6,5 +6,7 @@ public interface IConta {
 
     void transferir(double valor, Conta contaDestino);
 
+    void pix(double valor, Conta contaDestino);
+
     void extrato();
 }

@@ -15,6 +15,8 @@ public class Main {
 
         cc.transferir(50, poupanca);
 
+        poupanca.pix(15, cc);
+
         cc.extrato();
         poupanca.extrato();
 
